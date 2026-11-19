@@ -53,17 +53,14 @@ function debug(...args) {
     }
 }
 
-function book(author, title, pages) {
-    if (!new.target) {
-        debug("Please use 'new' with book.");
-        return;
+class book {
+    constructor(author, title, pages) {
+        this.ID = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = false; /** Comes by default, can be ticked later! */
     }
-
-    this.ID = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = false; /** Comes by default, can be ticked later! */
 }
 
 /**
